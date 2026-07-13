@@ -1,0 +1,10 @@
+# Cloudflare Workers (Static Assets) — deploy via `npx wrangler deploy`
+# Página 100% estática (sem worker de backend: os CTAs vão direto pros payment links da Stripe).
+# ⚠️ Domínio custom ainda NÃO plugado — aguardando OK do Thiago (sugestão: sketchup.montani3d.com.br).
+# Enquanto isso, prévia em lp-renderlab-sketchup-vendas.montanistudio3d.workers.dev
+name = "lp-renderlab-sketchup-vendas"
+compatibility_date = "2026-07-13"
+workers_dev = true
+
+[assets]
+directory = "./public"
