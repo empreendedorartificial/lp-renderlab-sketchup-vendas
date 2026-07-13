@@ -53,7 +53,7 @@ img,video{display:block;max-width:100%}
 .live-badge .ld{width:8px;height:8px;border-radius:50%;background:var(--live);box-shadow:0 0 0 0 rgba(255,59,59,.6);animation:livepulse 1.6s infinite}
 @keyframes livepulse{0%{box-shadow:0 0 0 0 rgba(255,59,59,.55)}70%{box-shadow:0 0 0 8px rgba(255,59,59,0)}100%{box-shadow:0 0 0 0 rgba(255,59,59,0)}}
 
-nav{position:sticky;top:0;z-index:50;background:rgba(0,0,0,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+nav{position:sticky;top:0;z-index:50;background:rgba(0,0,0,.78);backdrop-filter:blur(14px);border-bottom:1px solid rgba(212,248,26,.4)}
 .nav-in{max-width:1180px;margin:0 auto;padding:12px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px}
 .logo img{height:27px;width:auto}
 .logo-lockup{display:flex;align-items:center;gap:13px}
@@ -61,7 +61,11 @@ nav{position:sticky;top:0;z-index:50;background:rgba(0,0,0,.72);backdrop-filter:
 .logo-sk{height:18px;width:auto;opacity:.9}
 @media(max-width:560px){.logo-lockup{gap:8px}.logo img{height:22px}.logo-sk{height:14px}.lk-plus{font-size:14px}}
 .nav-right{display:flex;align-items:center;gap:16px}
-.nav-ev{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--text3)}
+.nav-ev{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--text2)}
+.nav-ev b{color:var(--neon);font-weight:700}
+.nav-of-curta{display:none}
+@media(max-width:900px){.nav-of{display:none}.nav-of-curta{display:inline}}
+@media(max-width:600px){.nav-of-curta{display:none}}
 .btn-neon{display:inline-flex;align-items:center;gap:7px;white-space:nowrap;background:var(--neon);color:#000;font-weight:600;font-size:14px;padding:11px 20px;border-radius:9999px;border:none;cursor:pointer;transition:transform .15s,box-shadow .15s}
 .btn-neon:hover{transform:translateY(-1px);box-shadow:0 8px 26px rgba(212,248,26,.28)}
 .nav-cta{padding:9px 17px;font-size:13px}
@@ -393,15 +397,6 @@ footer{border-top:1px solid var(--border);padding:30px 0;text-align:center;color
 .pcta:hover{border-color:var(--blue);color:var(--blue-t)}
 .pcta.pri{background:var(--neon);color:#000;border-color:transparent;box-shadow:0 0 22px rgba(212,248,26,.16)}
 .pcta.pri:hover{background:var(--neon-d);color:#000;box-shadow:0 0 38px rgba(212,248,26,.26)}
-
-/* barra fixa da oferta */
-.ofbar{position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(0,0,0,.82);backdrop-filter:blur(14px);border-top:1px solid rgba(212,248,26,.45);padding:11px 18px;display:flex;align-items:center;justify-content:center;gap:16px;transform:translateY(0);transition:transform .35s ease}
-.ofbar.hide{transform:translateY(110%)}
-.ofbar .t{font-size:14px;color:var(--text)}
-.ofbar .t b{color:var(--neon);font-weight:700}
-.ofbar .btn-neon{padding:9px 18px;font-size:13.5px;flex-shrink:0}
-@media(max-width:560px){.ofbar{gap:10px;padding:10px 12px}.ofbar .t{font-size:12.5px;line-height:1.35}}
-body{padding-bottom:64px}
 </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -432,8 +427,9 @@ src="https://www.facebook.com/tr?id=2428536680685666&ev=PageView&noscript=1"
 <nav><div class="nav-in">
   <div class="logo-lockup"><a class="logo" href="#"><img src="assets/img/logo-renderlab-ai.png" alt="RenderLAB AI"></a><span class="lk-plus">+</span><img class="logo-sk" src="assets/img/sketchup-white.png" alt="SketchUp"></div>
   <div class="nav-right">
-    <span class="nav-ev">IA no SketchUp &bull; j&aacute; dispon&iacute;vel</span>
-    <a class="btn-neon nav-cta" href="#oferta">Assinar agora</a>
+    <span class="nav-ev nav-of"><b>Oferta especial de lan&ccedil;amento</b> por tempo limitado: Starter Anual com R$500 de desconto</span>
+    <span class="nav-ev nav-of-curta"><b>Oferta de lan&ccedil;amento:</b> R$500 off no Starter Anual</span>
+    <a class="btn-neon nav-cta" href="#oferta">Ver oferta &rarr;</a>
   </div>
 </div></nav>
 
@@ -771,12 +767,6 @@ src="https://www.facebook.com/tr?id=2428536680685666&ev=PageView&noscript=1"
 
 
 
-<!-- BARRA FIXA DA OFERTA -->
-<div class="ofbar" id="ofbar">
-  <span class="t"><b>Oferta especial de lan&ccedil;amento</b> por tempo limitado: Starter Anual com R$500 de desconto</span>
-  <a class="btn-neon" href="#oferta">Ver oferta &rarr;</a>
-</div>
-
 <footer>RenderLAB &bull; Montani 3D Studio &bull; IA dentro do SketchUp</footer>
 
 <script>
@@ -868,15 +858,6 @@ function togglePlanos(){
   });
 }
 
-
-// barra fixa: some enquanto a seção da oferta está na tela
-(function(){
-  var bar=document.getElementById('ofbar'),sec=document.getElementById('oferta');
-  if(!bar||!sec||!('IntersectionObserver' in window))return;
-  new IntersectionObserver(function(es){
-    es.forEach(function(e){bar.classList.toggle('hide',e.isIntersecting)});
-  },{threshold:.15}).observe(sec);
-})();
 
 document.querySelectorAll('.faq-q').forEach(function(q){q.addEventListener('click',function(){q.parentElement.classList.toggle('open')});});
 // TABS de funcionalidades
