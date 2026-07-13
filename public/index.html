@@ -393,6 +393,15 @@ footer{border-top:1px solid var(--border);padding:30px 0;text-align:center;color
 .pcta:hover{border-color:var(--blue);color:var(--blue-t)}
 .pcta.pri{background:var(--neon);color:#000;border-color:transparent;box-shadow:0 0 22px rgba(212,248,26,.16)}
 .pcta.pri:hover{background:var(--neon-d);color:#000;box-shadow:0 0 38px rgba(212,248,26,.26)}
+
+/* barra fixa da oferta */
+.ofbar{position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(0,0,0,.82);backdrop-filter:blur(14px);border-top:1px solid rgba(212,248,26,.45);padding:11px 18px;display:flex;align-items:center;justify-content:center;gap:16px;transform:translateY(0);transition:transform .35s ease}
+.ofbar.hide{transform:translateY(110%)}
+.ofbar .t{font-size:14px;color:var(--text)}
+.ofbar .t b{color:var(--neon);font-weight:700}
+.ofbar .btn-neon{padding:9px 18px;font-size:13.5px;flex-shrink:0}
+@media(max-width:560px){.ofbar{gap:10px;padding:10px 12px}.ofbar .t{font-size:12.5px;line-height:1.35}}
+body{padding-bottom:64px}
 </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -513,96 +522,6 @@ src="https://www.facebook.com/tr?id=2428536680685666&ev=PageView&noscript=1"
 </div></div>
 
 
-<!-- OFERTA DE LANÇAMENTO -->
-<section class="sec" id="oferta" style="padding-top:64px">
-  <div class="ctn">
-    <div class="oferta-card">
-      <div class="of-badge">Oferta de lan&ccedil;amento</div>
-      <div class="of-title">Starter Anual com <span class="hl">R$500 de desconto.</span></div>
-      <p class="of-sub">A integra&ccedil;&atilde;o com o SketchUp entrou no ar e o plano mais usado do RenderLAB ficou mais barato pra quem chegar agora.</p>
-      <div class="of-price">
-        <span class="of-old">de <s>R$ 1.970</s></span>
-        <span class="of-now">R$ 1.470<small>/ano</small></span>
-      </div>
-      <div class="of-eq">equivale a R$ 122,50 por m&ecirc;s &middot; cobrado 1x ao ano</div>
-      <div class="of-inclui">
-        <div class="i"><svg stroke-width="2.4" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><b>12.000 cr&eacute;ditos do ano</b>, liberados de uma vez</span></div>
-        <div class="i"><svg stroke-width="2.4" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><b>Integra&ccedil;&atilde;o com o SketchUp</b>: o bot&atilde;o na sua barra</span></div>
-        <div class="i"><svg stroke-width="2.4" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><b>Render fotorrealista</b> em ~30 segundos</span></div>
-        <div class="i"><svg stroke-width="2.4" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><b>Tour 360</b> com link pra mandar no WhatsApp</span></div>
-        <div class="i"><svg stroke-width="2.4" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><b>V&iacute;deo</b> com movimento de c&acirc;mera, sem editor</span></div>
-        <div class="i"><svg stroke-width="2.4" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><b>Edi&ccedil;&atilde;o em portugu&ecirc;s</b>: ajuste a cena escrevendo</span></div>
-      </div>
-      <a class="btn-neon" data-plan="starter-a-promo" href="#">Garantir o Starter Anual por R$ 1.470 &rarr;</a>
-      <div class="of-prazo">Condi&ccedil;&atilde;o de lan&ccedil;amento &middot; <b>encerra em breve</b></div>
-    </div>
-  </div>
-</section>
-
-<!-- TODOS OS PLANOS -->
-<section class="sec planos" id="planos" style="padding-top:40px">
-  <div class="ctn">
-    <div class="sec-head" style="text-align:center">
-      <div class="tag" style="justify-content:center"><span class="dot"></span> Planos</div>
-      <div class="sec-title">Prefere outro ritmo? <span class="hl">Escolha o seu plano.</span></div>
-      <p class="sec-desc" style="margin:0 auto">Todo plano libera todas as funcionalidades, inclusive a integra&ccedil;&atilde;o com o SketchUp. O que muda &eacute; a quantidade de cr&eacute;ditos, que &eacute; o que vira render.</p>
-    </div>
-    <div class="ptoggle">
-      <span id="ptM" class="on" onclick="if(PLANOS_ANUAL)togglePlanos()">Mensal</span>
-      <div class="ptog-sw" id="ptSw" onclick="togglePlanos()"><div class="ptog-knob"></div></div>
-      <span id="ptA" onclick="if(!PLANOS_ANUAL)togglePlanos()">Anual</span>
-      <span class="ptoggle-badge">2 meses gr&aacute;tis</span>
-    </div>
-    <p class="pnote" id="pnote">No anual, os cr&eacute;ditos dos 12 meses entram de uma vez. Cancele quando quiser.</p>
-    <div class="pgrid">
-      <div class="pcard" data-plano="basic">
-        <div class="pname">Basic</div>
-        <div class="pper">Quem est&aacute; come&ccedil;ando</div>
-        <div class="pold"><s>R$ 97/m&ecirc;s</s></div>
-        <div class="pprice"><span>R$</span> <b class="pval">97</b><span>/m&ecirc;s</span></div>
-        <div class="pbill">cobrado mensalmente</div>
-        <div class="pcr"><span class="pcrt">300 cr&eacute;ditos todo m&ecirc;s</span></div>
-        <ul class="pfeats">
-          <li>Todas as funcionalidades liberadas</li>
-          <li>Integra&ccedil;&atilde;o com o SketchUp</li>
-          <li>Sem marca d&rsquo;&aacute;gua</li>
-        </ul>
-        <a class="pcta" data-plan="basic-m" href="#">Assinar Basic</a>
-      </div>
-      <div class="pcard feat" data-plano="starter">
-        <div class="pb-top">Mais popular</div>
-        <div class="pb-promo">Oferta de lan&ccedil;amento</div>
-        <div class="pname">Starter</div>
-        <div class="pper">Para profissionais</div>
-        <div class="pold"><s>R$ 197/m&ecirc;s</s></div>
-        <div class="pprice"><span>R$</span> <b class="pval">197</b><span>/m&ecirc;s</span></div>
-        <div class="pbill">cobrado mensalmente</div>
-        <div class="pcr"><span class="pcrt">1.000 cr&eacute;ditos todo m&ecirc;s</span></div>
-        <ul class="pfeats">
-          <li>Todas as funcionalidades liberadas</li>
-          <li>Integra&ccedil;&atilde;o com o SketchUp</li>
-          <li>Suporte priorit&aacute;rio</li>
-        </ul>
-        <a class="pcta pri" data-plan="starter-m" href="#">Assinar Starter</a>
-      </div>
-      <div class="pcard" data-plano="growth">
-        <div class="pname">Growth</div>
-        <div class="pper">Escalando volume</div>
-        <div class="pold"><s>R$ 397/m&ecirc;s</s></div>
-        <div class="pprice"><span>R$</span> <b class="pval">397</b><span>/m&ecirc;s</span></div>
-        <div class="pbill">cobrado mensalmente</div>
-        <div class="pcr"><span class="pcrt">2.500 cr&eacute;ditos todo m&ecirc;s</span></div>
-        <ul class="pfeats">
-          <li>Todas as funcionalidades liberadas</li>
-          <li>Fila exclusiva</li>
-          <li>Suporte priorit&aacute;rio</li>
-        </ul>
-        <a class="pcta" data-plan="growth-m" href="#">Assinar Growth</a>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- A INTEGRAÇÃO -->
 <section class="sec" style="padding-top:10px">
   <div class="ctn">
@@ -706,6 +625,96 @@ src="https://www.facebook.com/tr?id=2428536680685666&ev=PageView&noscript=1"
   </div>
 </section>
 
+<!-- OFERTA DE LANÇAMENTO -->
+<section class="sec" id="oferta" style="padding-top:64px">
+  <div class="ctn">
+    <div class="oferta-card">
+      <div class="of-badge">Oferta de lan&ccedil;amento</div>
+      <div class="of-title">Starter Anual com <span class="hl">R$500 de desconto.</span></div>
+      <p class="of-sub">A integra&ccedil;&atilde;o com o SketchUp entrou no ar e o plano mais usado do RenderLAB ficou mais barato pra quem chegar agora.</p>
+      <div class="of-price">
+        <span class="of-old">de <s>R$ 1.970</s></span>
+        <span class="of-now">R$ 1.470<small>/ano</small></span>
+      </div>
+      <div class="of-eq">equivale a R$ 122,50 por m&ecirc;s &middot; cobrado 1x ao ano</div>
+      <div class="of-inclui">
+        <div class="i"><svg stroke-width="2.4" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><b>12.000 cr&eacute;ditos do ano</b>, liberados de uma vez</span></div>
+        <div class="i"><svg stroke-width="2.4" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><b>Integra&ccedil;&atilde;o com o SketchUp</b>: o bot&atilde;o na sua barra</span></div>
+        <div class="i"><svg stroke-width="2.4" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><b>Render fotorrealista</b> em ~30 segundos</span></div>
+        <div class="i"><svg stroke-width="2.4" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><b>Tour 360</b> com link pra mandar no WhatsApp</span></div>
+        <div class="i"><svg stroke-width="2.4" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><b>V&iacute;deo</b> com movimento de c&acirc;mera, sem editor</span></div>
+        <div class="i"><svg stroke-width="2.4" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><b>Edi&ccedil;&atilde;o em portugu&ecirc;s</b>: ajuste a cena escrevendo</span></div>
+      </div>
+      <a class="btn-neon" data-plan="starter-a-promo" href="#">Garantir o Starter Anual por R$ 1.470 &rarr;</a>
+      <div class="of-prazo">Condi&ccedil;&atilde;o de lan&ccedil;amento &middot; <b>encerra em breve</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- TODOS OS PLANOS -->
+<section class="sec planos" id="planos" style="padding-top:40px">
+  <div class="ctn">
+    <div class="sec-head" style="text-align:center">
+      <div class="tag" style="justify-content:center"><span class="dot"></span> Planos</div>
+      <div class="sec-title">Prefere outro ritmo? <span class="hl">Escolha o seu plano.</span></div>
+      <p class="sec-desc" style="margin:0 auto">Todo plano libera todas as funcionalidades, inclusive a integra&ccedil;&atilde;o com o SketchUp. O que muda &eacute; a quantidade de cr&eacute;ditos, que &eacute; o que vira render.</p>
+    </div>
+    <div class="ptoggle">
+      <span id="ptM" class="on" onclick="if(PLANOS_ANUAL)togglePlanos()">Mensal</span>
+      <div class="ptog-sw" id="ptSw" onclick="togglePlanos()"><div class="ptog-knob"></div></div>
+      <span id="ptA" onclick="if(!PLANOS_ANUAL)togglePlanos()">Anual</span>
+      <span class="ptoggle-badge">2 meses gr&aacute;tis</span>
+    </div>
+    <p class="pnote" id="pnote">No anual, os cr&eacute;ditos dos 12 meses entram de uma vez. Cancele quando quiser.</p>
+    <div class="pgrid">
+      <div class="pcard" data-plano="basic">
+        <div class="pname">Basic</div>
+        <div class="pper">Quem est&aacute; come&ccedil;ando</div>
+        <div class="pold"><s>R$ 97/m&ecirc;s</s></div>
+        <div class="pprice"><span>R$</span> <b class="pval">97</b><span>/m&ecirc;s</span></div>
+        <div class="pbill">cobrado mensalmente</div>
+        <div class="pcr"><span class="pcrt">300 cr&eacute;ditos todo m&ecirc;s</span></div>
+        <ul class="pfeats">
+          <li>Todas as funcionalidades liberadas</li>
+          <li>Integra&ccedil;&atilde;o com o SketchUp</li>
+          <li>Sem marca d&rsquo;&aacute;gua</li>
+        </ul>
+        <a class="pcta" data-plan="basic-m" href="#">Assinar Basic</a>
+      </div>
+      <div class="pcard feat" data-plano="starter">
+        <div class="pb-top">Mais popular</div>
+        <div class="pb-promo">Oferta de lan&ccedil;amento</div>
+        <div class="pname">Starter</div>
+        <div class="pper">Para profissionais</div>
+        <div class="pold"><s>R$ 197/m&ecirc;s</s></div>
+        <div class="pprice"><span>R$</span> <b class="pval">197</b><span>/m&ecirc;s</span></div>
+        <div class="pbill">cobrado mensalmente</div>
+        <div class="pcr"><span class="pcrt">1.000 cr&eacute;ditos todo m&ecirc;s</span></div>
+        <ul class="pfeats">
+          <li>Todas as funcionalidades liberadas</li>
+          <li>Integra&ccedil;&atilde;o com o SketchUp</li>
+          <li>Suporte priorit&aacute;rio</li>
+        </ul>
+        <a class="pcta pri" data-plan="starter-m" href="#">Assinar Starter</a>
+      </div>
+      <div class="pcard" data-plano="growth">
+        <div class="pname">Growth</div>
+        <div class="pper">Escalando volume</div>
+        <div class="pold"><s>R$ 397/m&ecirc;s</s></div>
+        <div class="pprice"><span>R$</span> <b class="pval">397</b><span>/m&ecirc;s</span></div>
+        <div class="pbill">cobrado mensalmente</div>
+        <div class="pcr"><span class="pcrt">2.500 cr&eacute;ditos todo m&ecirc;s</span></div>
+        <ul class="pfeats">
+          <li>Todas as funcionalidades liberadas</li>
+          <li>Fila exclusiva</li>
+          <li>Suporte priorit&aacute;rio</li>
+        </ul>
+        <a class="pcta" data-plan="growth-m" href="#">Assinar Growth</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section class="sec" style="padding-top:10px">
   <div class="ctn">
@@ -759,6 +768,13 @@ src="https://www.facebook.com/tr?id=2428536680685666&ev=PageView&noscript=1"
   </div>
 </section>
 
+
+
+<!-- BARRA FIXA DA OFERTA -->
+<div class="ofbar" id="ofbar">
+  <span class="t"><b>Oferta especial de lan&ccedil;amento</b> por tempo limitado: Starter Anual com R$500 de desconto</span>
+  <a class="btn-neon" href="#oferta">Ver oferta &rarr;</a>
+</div>
 
 <footer>RenderLAB &bull; Montani 3D Studio &bull; IA dentro do SketchUp</footer>
 
@@ -850,6 +866,16 @@ function togglePlanos(){
     if(url)cta.href=url;else cta.href='#';
   });
 }
+
+
+// barra fixa: some enquanto a seção da oferta está na tela
+(function(){
+  var bar=document.getElementById('ofbar'),sec=document.getElementById('oferta');
+  if(!bar||!sec||!('IntersectionObserver' in window))return;
+  new IntersectionObserver(function(es){
+    es.forEach(function(e){bar.classList.toggle('hide',e.isIntersecting)});
+  },{threshold:.15}).observe(sec);
+})();
 
 document.querySelectorAll('.faq-q').forEach(function(q){q.addEventListener('click',function(){q.parentElement.classList.toggle('open')});});
 // TABS de funcionalidades
