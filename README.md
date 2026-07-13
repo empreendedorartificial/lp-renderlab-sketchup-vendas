@@ -5,8 +5,7 @@ Página de VENDAS da assinatura do RenderLAB pra fase pós-live do lançamento d
 ## Deploy
 
 **Tipo C** (worker + static assets em `public/`): `npx wrangler deploy` nesta pasta. Push NÃO publica.
-**Prévia:** https://lp-renderlab-sketchup-vendas.montanistudio3d.workers.dev/
-**Domínio final:** ⚠️ pendente de OK do Thiago (sugestão: `sketchup.montani3d.com.br`). Plugar via `routes` no `wrangler.toml` + redeploy, e atualizar `og:url`/`og:image` no `<head>`.
+**Domínio:** https://sketchup.montani3d.com.br/ (aprovado 13/07; workers.dev segue ativo como prévia).
 **Repo:** https://github.com/empreendedorartificial/lp-renderlab-sketchup-vendas
 
 ## Estrutura da página
@@ -34,9 +33,8 @@ Hero (instale agora) → prova (2.000+, dentro do SketchUp, ~30s, tour 360 no Wh
 
 O Starter anual regular (R$1.970) NÃO aparece na página: no anual, o card do Starter usa a oferta de R$1.470, igual à seção da oferta. Com `LINKS` vazio o CTA avisa "em configuração" e não navega.
 
-## Pendências antes de plugar o domínio
+## Pendência
 
-1. Payment link Starter Anual R$1.470 (criar na Stripe, colar no `LINKS`)
-2. Data real de encerramento da oferta (placeholder `[DATA A CONFIRMAR]` na seção `#oferta`)
-3. Confirmar resposta oficial do FAQ "funciona em qual versão do SketchUp" (e revisar "como instala")
-4. OK do Thiago no subdomínio + plugar rota + ajustar `og:url`/`og:image`
+1. **Payment link Starter Anual R$1.470**: Thiago vai criar na Stripe (sem campo de cupom) e mandar; colar em `LINKS['starter-a-promo']` no `index.html` + redeploy. Até lá o CTA da oferta avisa "em configuração" e não navega.
+
+Decisões de 13/07: prazo da oferta é só "encerra em breve" (sem data, sem cronômetro); FAQ inclui resposta neutra sobre SketchUp não original (funciona, recomendação é usar o original).
