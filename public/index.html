@@ -662,7 +662,7 @@ src="https://www.facebook.com/tr?id=2428536680685666&ev=PageView&noscript=1"
       <span id="ptA" onclick="if(!PLANOS_ANUAL)togglePlanos()">Anual</span>
       <span class="ptoggle-badge">2 meses gr&aacute;tis</span>
     </div>
-    <p class="pnote" id="pnote">No anual, os cr&eacute;ditos dos 12 meses entram de uma vez. Cancele quando quiser.</p>
+    <p class="pnote" id="pnote">No anual tem desconto: 2 meses saem gr&aacute;tis, voc&ecirc; paga 10 e leva 12.</p>
     <div class="pgrid">
       <div class="pcard" data-plano="basic">
         <div class="pname">Basic</div>
@@ -835,7 +835,7 @@ function togglePlanos(){
   document.getElementById('ptA').classList.toggle('on',PLANOS_ANUAL);
   document.getElementById('pnote').textContent=PLANOS_ANUAL
     ?'Voc\u00ea paga 10 meses e leva 12. Os cr\u00e9ditos do ano inteiro entram de uma vez.'
-    :'No anual, os cr\u00e9ditos dos 12 meses entram de uma vez. Cancele quando quiser.';
+    :'No anual tem desconto: 2 meses saem gr\u00e1tis, voc\u00ea paga 10 e leva 12.';
   Object.keys(PDATA).forEach(function(k){
     var d=PDATA[k],c=document.querySelector('.pcard[data-plano="'+k+'"]');
     var val=c.querySelector('.pval'),bill=c.querySelector('.pbill'),cr=c.querySelector('.pcrt'),cta=c.querySelector('.pcta'),old=c.querySelector('.pold s');
