@@ -14,7 +14,7 @@ Hero (instale agora) → prova (2.000+, dentro do SketchUp, ~30s, tour 360 no Wh
 
 ## Tracking e atribuição (crítico)
 
-- Meta Pixel `2428536680685666` no `<head>`; `InitiateCheckout` (com `value` do plano) no clique de qualquer CTA.
+- Meta Pixel `1007988481875466` no `<head>` (⚠️ pixel PRÓPRIO do RenderLAB, trocado a pedido do Luiz em 15/07 — exceção ao pixel padrão Montani `2428536680685666`); `InitiateCheckout` (com `value` do plano) no clique de qualquer CTA.
 - CTAs vão DIRETO pros payment links da Stripe (nunca pro renderlab.club, que não captura UTM).
 - Cada link sai com `?client_reference_id=lpsk--<utm_content>` (sanitizado `[a-z0-9-]`, cortado em 60 chars; sem `utm_content` vira `lpsk-organico`). UTMs ficam em `sessionStorage` (`mnt_utm`) e sobrevivem à navegação.
 - O worker `financeiro-sync` grava o `client_reference_id` na `stripe_atrib` do D1 e o painel mostra em "Origem das vendas".
