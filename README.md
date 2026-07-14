@@ -10,7 +10,7 @@ Página de VENDAS da assinatura do RenderLAB pra fase pós-live do lançamento d
 
 ## Estrutura da página
 
-Hero (instale agora) → prova (2.000+, dentro do SketchUp, ~30s, tour 360 no WhatsApp) → **OFERTA DE LANÇAMENTO** (Starter Anual de R$1.970 por R$1.470) → **PLANOS** (Starter/Growth, toggle mensal/anual; Basic removido a pedido do Thiago em 14/07) → vídeo da integração → funcionalidades (tabs) → pra quem é → quem criou → FAQ de vendas → CTA final. Sem formulário, sem MailerLite/ManyChat, sem `confirmado.html`.
+Hero (instale agora) → prova (2.000+, dentro do SketchUp, ~30s, tour 360 no WhatsApp) → **PLANOS** (Starter/Growth, toggle mensal/anual; Basic removido em 14/07) → replay da live (VTurb) → funcionalidades (tabs) → pra quem é → quem criou → FAQ de vendas → CTA final. **A oferta de lançamento (Starter Anual R$1.470) foi ENCERRADA e removida em 15/07** — seção, barra do topo, badge do card, og:image e link promo; Starter anual voltou ao preço cheio R$1.970 com o link regular. Sem formulário, sem MailerLite/ManyChat, sem `confirmado.html`.
 
 ## Tracking e atribuição (crítico)
 
@@ -25,11 +25,9 @@ Hero (instale agora) → prova (2.000+, dentro do SketchUp, ~30s, tour 360 no Wh
 | Plano | Preço | Link |
 |---|---|---|
 | Starter mensal | R$197 | `7sY3cvba5fgv6AIe0ZeIw0h` |
-| **Starter anual PROMO** | **R$1.470** | `bJeaEX4LH6JZbV2bSReIw0n` (plugado 14/07) |
+| Starter anual | R$1.970 | `14A6oH2Dz5FVaQY3mleIw0g` |
 | Growth mensal | R$397 | `aFa14n4LHfgvcZ6aONeIw0f` |
 | Growth anual | R$3.970 | `6oUbJ16TPgkzf7ebSReIw0e` |
-
-O Starter anual regular (R$1.970) NÃO aparece na página: no anual, o card do Starter usa a oferta de R$1.470, igual à seção da oferta.
 
 ## Pendência
 
