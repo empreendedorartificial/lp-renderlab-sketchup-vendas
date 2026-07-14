@@ -35,6 +35,6 @@ O Starter anual regular (R$1.970) NÃO aparece na página: no anual, o card do S
 
 ## Pendência
 
-1. **Replay da VTurb não monta o vídeo** (14/07): embed `vid-6a559c5fbb9552173c6abb02` instalado na seção do replay + preloads no head, mas o player não cria o elemento de vídeo nem no embed isolado (`/teste-player.html`, mantida pra reteste) — erro `PlaybackControls: play: video element not found` vindo do próprio player. Manifests e thumbnail respondem 200: o problema é do lado da VTurb (vídeo processando ou player não publicado). Conferir no painel da VTurb; nada a mudar no nosso código.
+Replay da live: embed VTurb `vid-6a559c5fbb9552173c6abb02` na seção do replay, funcionando (validado 14/07 após publicação do player na VTurb). Página sem pendências.
 
 Decisões de 13/07: prazo da oferta é só "encerra em breve" (sem data, sem cronômetro); FAQ inclui resposta neutra sobre SketchUp não original (funciona, recomendação é usar o original).
