@@ -27,15 +27,14 @@ Hero (instale agora) → prova (2.000+, dentro do SketchUp, ~30s, tour 360 no Wh
 | Basic mensal | R$97 | `5kQdR9fql5FV0ck9KJeIw0j` |
 | Basic anual | R$970 | `eVq4gzdid0lBe3acWVeIw0i` |
 | Starter mensal | R$197 | `7sY3cvba5fgv6AIe0ZeIw0h` |
-| **Starter anual PROMO** | **R$1.470** | ⚠️ **NÃO EXISTE — criar na Stripe** (sem campo de cupom) e colar em `LINKS['starter-a-promo']` |
+| **Starter anual PROMO** | **R$1.470** | `bJeaEX4LH6JZbV2bSReIw0n` (plugado 14/07) |
 | Growth mensal | R$397 | `aFa14n4LHfgvcZ6aONeIw0f` |
 | Growth anual | R$3.970 | `6oUbJ16TPgkzf7ebSReIw0e` |
 
-O Starter anual regular (R$1.970) NÃO aparece na página: no anual, o card do Starter usa a oferta de R$1.470, igual à seção da oferta. Com `LINKS` vazio o CTA avisa "em configuração" e não navega.
+O Starter anual regular (R$1.970) NÃO aparece na página: no anual, o card do Starter usa a oferta de R$1.470, igual à seção da oferta.
 
 ## Pendência
 
 1. **Replay da VTurb não monta o vídeo** (14/07): embed `vid-6a559c5fbb9552173c6abb02` instalado na seção do replay + preloads no head, mas o player não cria o elemento de vídeo nem no embed isolado (`/teste-player.html`, mantida pra reteste) — erro `PlaybackControls: play: video element not found` vindo do próprio player. Manifests e thumbnail respondem 200: o problema é do lado da VTurb (vídeo processando ou player não publicado). Conferir no painel da VTurb; nada a mudar no nosso código.
-2. **Payment link Starter Anual R$1.470**: Thiago vai criar na Stripe (sem campo de cupom) e mandar; colar em `LINKS['starter-a-promo']` no `index.html` + redeploy. Até lá o CTA da oferta avisa "em configuração" e não navega.
 
 Decisões de 13/07: prazo da oferta é só "encerra em breve" (sem data, sem cronômetro); FAQ inclui resposta neutra sobre SketchUp não original (funciona, recomendação é usar o original).
