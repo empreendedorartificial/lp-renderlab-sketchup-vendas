@@ -380,7 +380,7 @@ footer{border-top:1px solid var(--border);padding:30px 0;text-align:center;color
 .ptog-knob{width:20px;height:20px;background:#c6c6c6;border-radius:50%;position:absolute;top:2px;left:2px;transition:transform .2s}
 .ptog-sw.on .ptog-knob{transform:translateX(22px)}
 .pnote{text-align:center;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--text3);letter-spacing:.04em;margin-bottom:34px}
-.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1020px;margin:0 auto}
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:720px;margin:0 auto}
 @media(max-width:880px){.pgrid{grid-template-columns:1fr;max-width:430px}}
 .pcard{position:relative;background:var(--glass);backdrop-filter:var(--glass-blur);border:1px solid var(--border);border-radius:var(--radius);padding:30px 28px;transition:border-color .3s}
 .pcard.feat{border-color:var(--blue);box-shadow:0 0 70px rgba(0,48,255,.12)}
@@ -664,20 +664,6 @@ src="https://www.facebook.com/tr?id=2428536680685666&ev=PageView&noscript=1"
     </div>
     <p class="pnote" id="pnote">No anual tem desconto: 2 meses saem gr&aacute;tis, voc&ecirc; paga 10 e leva 12.</p>
     <div class="pgrid">
-      <div class="pcard" data-plano="basic">
-        <div class="pname">Basic</div>
-        <div class="pper">Quem est&aacute; come&ccedil;ando</div>
-        <div class="pold"><s>R$ 97/m&ecirc;s</s></div>
-        <div class="pprice"><span>R$</span> <b class="pval">97</b><span>/m&ecirc;s</span></div>
-        <div class="pbill">cobrado mensalmente</div>
-        <div class="pcr"><span class="pcrt">300 cr&eacute;ditos todo m&ecirc;s</span></div>
-        <ul class="pfeats">
-          <li>Todas as funcionalidades liberadas</li>
-          <li>Integra&ccedil;&atilde;o com o SketchUp</li>
-          <li>Sem marca d&rsquo;&aacute;gua</li>
-        </ul>
-        <a class="pcta" data-plan="basic-m" href="#">Assinar Basic</a>
-      </div>
       <div class="pcard feat" data-plano="starter">
         <div class="pb-top">Mais popular</div>
         <div class="pb-promo">Oferta de lan&ccedil;amento</div>
@@ -787,14 +773,12 @@ var UTM=(function(){
 // O worker financeiro-sync grava isso no D1 (stripe_atrib) -> painel "Origem das vendas".
 // Atribuição marca a PRIMEIRA venda; renovações não carregam origem.
 var LINKS={
-  'basic-m':'https://buy.stripe.com/5kQdR9fql5FV0ck9KJeIw0j',
-  'basic-a':'https://buy.stripe.com/eVq4gzdid0lBe3acWVeIw0i',
   'starter-m':'https://buy.stripe.com/7sY3cvba5fgv6AIe0ZeIw0h',
   'starter-a-promo':'https://buy.stripe.com/bJeaEX4LH6JZbV2bSReIw0n', // Starter Anual R$1.470 (oferta de lançamento)
   'growth-m':'https://buy.stripe.com/aFa14n4LHfgvcZ6aONeIw0f',
   'growth-a':'https://buy.stripe.com/6oUbJ16TPgkzf7ebSReIw0e'
 };
-var PRECOS={'basic-m':97,'basic-a':970,'starter-m':197,'starter-a-promo':1470,'growth-m':397,'growth-a':3970};
+var PRECOS={'starter-m':197,'starter-a-promo':1470,'growth-m':397,'growth-a':3970};
 function refId(){
   var c=String(UTM.utm_content||'').toLowerCase().replace(/[^a-z0-9-]/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
   return (c?('lpsk--'+c):'lpsk-organico').slice(0,60);
@@ -820,7 +804,6 @@ ligarCtas();
 // ===== PLANOS: toggle mensal/anual (anual = 12 meses pelo preço de 10) =====
 // Starter anual usa a OFERTA DE LANÇAMENTO (R$1.470, mesmo preço da seção da oferta).
 var PDATA={
-  basic:  {m:97, a:970,  aTxt:'R$ 970 cobrados 1x ao ano: 12 meses pelo pre\u00e7o de 10', crM:'300 cr\u00e9ditos todo m\u00eas',   crA:'3.600 cr\u00e9ditos de uma vez',  lm:'basic-m',  la:'basic-a'},
   starter:{m:197,a:1470, old:'R$ 1.970/ano', aTxt:'R$ 1.470 cobrados 1x ao ano \u00b7 oferta de lan\u00e7amento (de R$ 1.970)', crM:'1.000 cr\u00e9ditos todo m\u00eas', crA:'12.000 cr\u00e9ditos de uma vez', lm:'starter-m',la:'starter-a-promo'},
   growth: {m:397,a:3970, aTxt:'R$ 3.970 cobrados 1x ao ano: 12 meses pelo pre\u00e7o de 10', crM:'2.500 cr\u00e9ditos todo m\u00eas',  crA:'30.000 cr\u00e9ditos de uma vez', lm:'growth-m', la:'growth-a'}
 };
