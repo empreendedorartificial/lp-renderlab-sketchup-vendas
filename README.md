@@ -34,3 +34,7 @@ Hero (instale agora) → prova (2.000+, dentro do SketchUp, ~30s, tour 360 no Wh
 Replay da live: embed VTurb `vid-6a559c5fbb9552173c6abb02` na seção do replay, funcionando (validado 14/07 após publicação do player na VTurb). Página sem pendências.
 
 Decisões de 13/07: prazo da oferta é só "encerra em breve" (sem data, sem cronômetro); FAQ inclui resposta neutra sobre SketchUp não original (funciona, recomendação é usar o original).
+
+## Tags
+
+- **Google Tag Manager `GTM-W3VW5FZP`** no `<head>` + noscript após `<body>` (instalado 24/07/2026). Convive com o Meta Pixel próprio do RenderLAB `1007988481875466`.
