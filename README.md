@@ -38,3 +38,12 @@ Decisões de 13/07: prazo da oferta é só "encerra em breve" (sem data, sem cro
 ## Tags
 
 - **Google Tag Manager `GTM-W3VW5FZP`** no `<head>` + noscript após `<body>` (instalado 24/07/2026). Convive com o Meta Pixel próprio do RenderLAB `1007988481875466`.
+
+## Vídeo do tutorial (03/08/2026)
+
+A seção "Replay da live de lançamento" virou **"Tutorial completo"**: o embed do YouTube da live
+crua foi substituído por player self-hosted com o corte limpo (47min21s, sem pitch/oferta, QR
+coberto) em `https://videos.montani3d.com.br/tutorial-renderlab-sketchup.mp4` (R2, ver
+`landing-pages/montani-videos/`). Poster em `assets/img/tutorial-poster.jpg`. O script de
+autoplay global agora ignora `video[controls]` — não remover essa exclusão, senão o tutorial
+dá play mutado sozinho. Detalhes do corte: `renderlab/lancamentos/corte-tutorial-live-sketchup.md`.

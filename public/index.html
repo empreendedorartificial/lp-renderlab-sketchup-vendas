@@ -509,15 +509,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="sec" style="padding-top:10px">
   <div class="ctn">
     <div class="sec-head">
-      <div class="tag"><span class="dot"></span> Replay da live de lan&ccedil;amento</div>
-      <div class="sec-title">Assista ao replay da live de lan&ccedil;amento da IA no SketchUp e veja como &eacute; <span class="hl">simples instalar e usar.</span></div>
-      <p class="sec-desc">No replay, o Luiz instala o plugin do zero em menos de 5 minutos e mostra cada funcionalidade rodando num projeto de verdade: render fotorrealista, 360 (tour virtual), v&iacute;deo, reflexo e edi&ccedil;&atilde;o em portugu&ecirc;s.</p>
+      <div class="tag"><span class="dot"></span> Tutorial completo</div>
+      <div class="sec-title">Assista ao tutorial completo da IA no SketchUp e veja como &eacute; <span class="hl">simples instalar e usar.</span></div>
+      <p class="sec-desc">O Luiz instala o plugin do zero e mostra cada funcionalidade rodando num projeto de verdade: render fotorrealista, 360 (tour virtual), v&iacute;deo, planta humanizada, novos &acirc;ngulos e edi&ccedil;&atilde;o em portugu&ecirc;s. 47 minutos, direto ao ponto.</p>
     </div>
     <div class="demo-window">
-      <div class="demo-bar"><span class="d r"></span><span class="d y"></span><span class="d g"></span><span class="u">SketchUp + RenderLAB &bull; replay da live de lan&ccedil;amento</span></div>
-      <iframe src="https://www.youtube.com/embed/kHdQx1jBIDo?rel=0" title="Replay da live de lan&ccedil;amento &mdash; IA no SketchUp" style="width:100%;aspect-ratio:16/9;display:block;border:0;background:#000" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <div class="demo-bar"><span class="d r"></span><span class="d y"></span><span class="d g"></span><span class="u">SketchUp + RenderLAB &bull; tutorial completo (47 min)</span></div>
+      <video src="https://videos.montani3d.com.br/tutorial-renderlab-sketchup.mp4" title="Tutorial completo &mdash; IA no SketchUp" controls playsinline preload="metadata" poster="assets/img/tutorial-poster.jpg" style="width:100%;aspect-ratio:16/9;display:block;border:0;background:#000"></video>
     </div>
-    <p class="demo-cap">Replay da live de lan&ccedil;amento, com &aacute;udio. Clique pra assistir.</p>
+    <p class="demo-cap">Tutorial completo, com &aacute;udio. Clique pra assistir.</p>
   </div>
 </section>
 
@@ -843,7 +843,7 @@ if(stage){
 // AUTOPLAY confiável — toca cada vídeo ao entrar na viewport, pausa ao sair
 // (contorna o adiamento/limite de autoplay do navegador quando há vários vídeos)
 (function(){
-  var vids=document.querySelectorAll('video');
+  var vids=document.querySelectorAll('video:not([controls])'); // player do tutorial fica fora do autoplay
   // toca; se falhar (vídeo ainda sem dados), tenta de novo quando puder
   function tryplay(v){
     var p=v.play();
